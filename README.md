@@ -63,16 +63,8 @@ A structured, implementation-ready plan for detecting fake news using a user–n
 ## Project Structure
 
 - data/: Raw CSVs (politifact_fake.csv, politifact_real.csv).
-- src/:
-  - data_preprocessing.py
-  - graph_construction.py
-  - trustworthiness.py
-  - features.py
-  - model.py
-  - train_eval.py
-- notebooks/: Exploratory analysis and visualizations.
-- reports/: Results, figures, and final write-up.
-- README.md: This document.
+- xxx/:
+  - xxxx
 
 ## Library Requirements
 
@@ -85,37 +77,12 @@ A structured, implementation-ready plan for detecting fake news using a user–n
   - matplotlib
   - seaborn
 
-Installation (example):
-- pip install networkx pandas numpy torch scikit-learn matplotlib seaborn
-
-## Assumptions and Notes
-
-- Users are represented via tweet IDs or user IDs derived from sharing posts.
-- A user’s trustworthiness is undefined only when they have zero shares; default to neutral (0.5).
-- Confidence threshold tuning affects calibration of trust scores; start around 5 and adjust.
-- Feature normalization (e.g., StandardScaler) is recommended before training.
-
-## Risks and Mitigations
-
-- Class imbalance: Use stratified splits; consider class weighting or resampling.
-- Data leakage: Ensure that user-based statistics are computed only on training data when doing strict evaluations; for a class project, a simple split may suffice, but document the choice.
-- Sparsity: Many items may have few sharers; consider minimum-share filtering or smoothing.
-- Overfitting: Use dropout, early stopping, and hold-out validation.
-
-## Extension Ideas
-
-- Add temporal features (e.g., early sharer trust, diffusion speed).
-- Community detection on the user subgraph; include community-level trust features.
-- Incorporate text features from titles or content using embeddings.
-- Try graph-based models (e.g., GNNs on the bipartite graph).
-- Calibrate outputs (Platt scaling or isotonic regression) for better probabilities.
 
 ## Deliverables
 
-1. Network visualization highlighting user communities and sharing patterns.
+1. Network visualization.
 2. Trustworthiness distribution plots (histogram, KDE).
 3. Model performance: accuracy, precision, recall, F1, and confusion matrix.
-4. Feature importance or sensitivity analysis (e.g., permutation importance on the tabular model).
 5. Clean, documented code repository with clear instructions to run each step.
 
 ## Suggested Timeline
@@ -125,22 +92,4 @@ Installation (example):
 - Step 3: Model implementation and training; initial evaluations.
 - Step 4: Final evaluation, visualizations, report writing and polishing.
 
-## How to Run (High-Level)
 
-- Prepare data in data/ with expected CSV fields.
-- Execute preprocessing to create user–news pairs.
-- Build the bipartite graph and compute user statistics.
-- Compute trustworthiness scores and extract per-news features.
-- Normalize features, split data, train the model, and evaluate.
-- Generate plots and compile findings into the report.
-
-## Ethical Considerations
-
-- Avoid labeling individuals as malicious; trust scores reflect observed sharing behavior under dataset constraints.
-- Be transparent about limitations and dataset biases.
-- Do not deploy beyond the classroom context without rigorous validation and appropriate safeguards.
-
-## Acknowledgments
-
-- Inspired by misinformation detection research leveraging social propagation and user credibility signals.
-- Dataset attribution to PolitiFact-style public datasets where applicable.
