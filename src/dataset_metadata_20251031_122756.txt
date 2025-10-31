@@ -1,0 +1,21 @@
+DATASET SPLIT METADATA
+============================================================
+
+Created: 2025-10-31 12:27:56
+Total news nodes: 23194
+
+Split sizes:
+  Train: 13916 (60.0%)
+  Val:   4639 (20.0%)
+  Test:  4639 (20.0%)
+
+Files:
+  dataset_train_20251031_122756.csv
+  dataset_val_20251031_122756.csv
+  dataset_test_20251031_122756.csv
+
+Usage:
+  1. Load the graph: pickle.load('your_graph.pkl')
+  2. Load train/val/test CSV files
+  3. Use 'node_id' column to identify which nodes are in which split
+  4. Use 'label' column (0=fake, 1=real) as ground truth

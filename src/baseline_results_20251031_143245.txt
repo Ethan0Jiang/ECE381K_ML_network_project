@@ -1,0 +1,222 @@
+======================================================================
+BASELINE EVALUATION RESULTS
+======================================================================
+Evaluation Date: 2025-10-31 14:32:45
+Method: Trustworthiness-based prediction (no training)
+Approach: Predict real news when user trustworthiness >= 0.5
+
+METRIC EXPLANATIONS:
+----------------------------------------------------------------------
+1. avg_user_trust (Average User Trust):
+   - Mean trustworthiness across all users who shared the news
+   - Balanced view of the overall crowd
+
+2. high_trust_ratio (High Trust Ratio):
+   - Proportion of users with trustworthiness >= 0.6
+   - Focuses on the credible majority
+
+3. max_user_trust (Maximum User Trust):
+   - Highest trustworthiness among all sharers
+   - Best case: at least one credible person shared it
+
+======================================================================
+TRAIN SET RESULTS
+======================================================================
+
+Method: avg_user_trust
+----------------------------------------------------------------------
+  Accuracy:  0.8794
+  Precision: 0.9641
+  Recall:    0.8744
+  F1 Score:  0.9170
+  AUC:       0.9244
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)    2017         236
+          Real (1)     909        6329
+  ---------------------------------------------
+  True Negatives  (TN):   2017  (Correctly identified fake)
+  False Positives (FP):    236  (Fake predicted as real)
+  False Negatives (FN):    909  (Real predicted as fake)
+  True Positives  (TP):   6329  (Correctly identified real)
+
+Method: high_trust_ratio
+----------------------------------------------------------------------
+  Accuracy:  0.8716
+  Precision: 0.9576
+  Recall:    0.8701
+  F1 Score:  0.9118
+  AUC:       0.8855
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)    1974         279
+          Real (1)     940        6298
+  ---------------------------------------------
+  True Negatives  (TN):   1974  (Correctly identified fake)
+  False Positives (FP):    279  (Fake predicted as real)
+  False Negatives (FN):    940  (Real predicted as fake)
+  True Positives  (TP):   6298  (Correctly identified real)
+
+Method: max_user_trust
+----------------------------------------------------------------------
+  Accuracy:  0.8212
+  Precision: 0.8377
+  Recall:    0.9496
+  F1 Score:  0.8901
+  AUC:       0.7383
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)     921        1332
+          Real (1)     365        6873
+  ---------------------------------------------
+  True Negatives  (TN):    921  (Correctly identified fake)
+  False Positives (FP):   1332  (Fake predicted as real)
+  False Negatives (FN):    365  (Real predicted as fake)
+  True Positives  (TP):   6873  (Correctly identified real)
+
+======================================================================
+VALIDATION SET RESULTS
+======================================================================
+
+Method: avg_user_trust
+----------------------------------------------------------------------
+  Accuracy:  0.8817
+  Precision: 0.9620
+  Recall:    0.8800
+  F1 Score:  0.9192
+  AUC:       0.9121
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)     668          85
+          Real (1)     293        2149
+  ---------------------------------------------
+  True Negatives  (TN):    668  (Correctly identified fake)
+  False Positives (FP):     85  (Fake predicted as real)
+  False Negatives (FN):    293  (Real predicted as fake)
+  True Positives  (TP):   2149  (Correctly identified real)
+
+Method: high_trust_ratio
+----------------------------------------------------------------------
+  Accuracy:  0.8604
+  Precision: 0.9528
+  Recall:    0.8600
+  F1 Score:  0.9040
+  AUC:       0.8744
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)     649         104
+          Real (1)     342        2100
+  ---------------------------------------------
+  True Negatives  (TN):    649  (Correctly identified fake)
+  False Positives (FP):    104  (Fake predicted as real)
+  False Negatives (FN):    342  (Real predicted as fake)
+  True Positives  (TP):   2100  (Correctly identified real)
+
+Method: max_user_trust
+----------------------------------------------------------------------
+  Accuracy:  0.8141
+  Precision: 0.8341
+  Recall:    0.9447
+  F1 Score:  0.8859
+  AUC:       0.7123
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)     294         459
+          Real (1)     135        2307
+  ---------------------------------------------
+  True Negatives  (TN):    294  (Correctly identified fake)
+  False Positives (FP):    459  (Fake predicted as real)
+  False Negatives (FN):    135  (Real predicted as fake)
+  True Positives  (TP):   2307  (Correctly identified real)
+
+======================================================================
+TEST SET RESULTS
+======================================================================
+
+Method: avg_user_trust
+----------------------------------------------------------------------
+  Accuracy:  0.8789
+  Precision: 0.9637
+  Recall:    0.8747
+  F1 Score:  0.9171
+  AUC:       0.9232
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)     671          81
+          Real (1)     308        2151
+  ---------------------------------------------
+  True Negatives  (TN):    671  (Correctly identified fake)
+  False Positives (FP):     81  (Fake predicted as real)
+  False Negatives (FN):    308  (Real predicted as fake)
+  True Positives  (TP):   2151  (Correctly identified real)
+
+Method: high_trust_ratio
+----------------------------------------------------------------------
+  Accuracy:  0.8698
+  Precision: 0.9578
+  Recall:    0.8682
+  F1 Score:  0.9108
+  AUC:       0.8848
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)     658          94
+          Real (1)     324        2135
+  ---------------------------------------------
+  True Negatives  (TN):    658  (Correctly identified fake)
+  False Positives (FP):     94  (Fake predicted as real)
+  False Negatives (FN):    324  (Real predicted as fake)
+  True Positives  (TP):   2135  (Correctly identified real)
+
+Method: max_user_trust
+----------------------------------------------------------------------
+  Accuracy:  0.8222
+  Precision: 0.8396
+  Recall:    0.9492
+  F1 Score:  0.8910
+  AUC:       0.7357
+
+  Confusion Matrix:
+  ---------------------------------------------
+                    Predicted
+                    Fake (0)    Real (1)
+  ---------------------------------------------
+  Actual  Fake (0)     306         446
+          Real (1)     125        2334
+  ---------------------------------------------
+  True Negatives  (TN):    306  (Correctly identified fake)
+  False Positives (FP):    446  (Fake predicted as real)
+  False Negatives (FN):    125  (Real predicted as fake)
+  True Positives  (TP):   2334  (Correctly identified real)
+
