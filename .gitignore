@@ -1,0 +1,10 @@
+# Ignore large dataset or generated files
+*.pkl
+*.gexf
+*.csv
+
+# (Optional) temporary or derived data
+*.pt
+*.npz
+*.npy
+
