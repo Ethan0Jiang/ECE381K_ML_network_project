@@ -1,13 +1,29 @@
-DATASET SPLIT METADATA
+DATASET SPLIT METADATA (NN v2)
 ============================================================
 
-Created: 2025-10-31 12:33:55
-Total news nodes: 23194
+Created: 2025-11-03 21:08:56
+Total edges: 1920695
 
-Split sizes:
-  Train: 13916 (60.0%)
-  Val:   4639 (20.0%)
-  Test:  4639 (20.0%)
+Split sizes (edges):
+  Train: 1173029 (61.1%)
+  Val:   400893 (20.9%)
+  Test:  346773 (18.1%)
+
+Training paradigm:
+  Each row = one training example (user-news edge)
+  Input (X): User features (5 features)
+    - gossipcop_fake: # of fake news from Gossipcop shared by user
+    - gossipcop_real: # of real news from Gossipcop shared by user
+    - politifact_fake: # of fake news from Politifact shared by user
+    - politifact_real: # of real news from Politifact shared by user
+    - total_shares: Total # of news shared by user
+  Target (y): News label (0=fake, 1=real)
+
+Additional columns (not for training):
+  - user_id: User identifier
+  - news_id: News identifier
+  - news_source: News source (gossipcop/politifact)
+  - user_trustworthiness: For baseline comparison only
 
 Files:
   dataset_train.csv
@@ -15,7 +31,11 @@ Files:
   dataset_test.csv
 
 Usage:
-  1. Load the graph: pickle.load('your_graph.pkl')
-  2. Load train/val/test CSV files
-  3. Use 'node_id' column to identify which nodes are in which split
-  4. Use 'label' column (0=fake, 1=real) as ground truth
+  import pandas as pd
+  train_df = pd.read_csv('dataset_train.csv')
+  
+  # Extract features and labels
+  feature_cols = ['gossipcop_fake', 'gossipcop_real', 
+                  'politifact_fake', 'politifact_real', 'total_shares']
+  X_train = train_df[feature_cols].values
+  y_train = train_df['label'].values

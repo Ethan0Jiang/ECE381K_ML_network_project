@@ -1,0 +1,68 @@
+================================================================================
+FAKE NEWS NETWORK GRAPH VALIDATION REPORT
+================================================================================
+Generated: 2025-11-03 20:59:03
+================================================================================
+
+VALIDATION SUMMARY
+--------------------------------------------------------------------------------
+Total Errors: 0
+Total Warnings: 0
+Total Info: 5
+
+GRAPH STATISTICS
+--------------------------------------------------------------------------------
+Total Nodes: 163408
+Total Edges: 1920695
+News Nodes: 21424
+User Nodes: 141984
+Fake News: 5314
+Real News: 16110
+Gossipcop News: 20635
+Politifact News: 789
+
+NEWS NODE DEGREE STATISTICS
+--------------------------------------------------------------------------------
+Mean: 89.65
+Median: 41.00
+Std Dev: 455.10
+Min: 1
+Max: 25437
+
+USER NODE DEGREE STATISTICS
+--------------------------------------------------------------------------------
+Mean: 13.53
+Median: 13.00
+Std Dev: 8.83
+Min: 1
+Max: 52
+
+USER SHARING STATISTICS
+--------------------------------------------------------------------------------
+Mean Shares per User: 13.70
+Median Shares per User: 13.00
+Std Dev: 9.01
+
+SAMPLE NODE ATTRIBUTES
+--------------------------------------------------------------------------------
+Sample News Node: politifact_politifact15014
+  node_type: news
+  title: BREAKING: First NFL Team Declares Bankruptcy Over Kneeling Thugs...
+  url: speedtalk.com/forum/viewtopic.php?t=51650
+  label: 0
+  source: politifact
+  ground_truth: fake
+  num_shares: 163
+
+Sample User Node: user_0
+  node_type: user
+  gossipcop_fake: 2
+  gossipcop_real: 2
+  politifact_fake: 0
+  politifact_real: 2
+  total_shares: 6
+  trustworthiness: 0.6
+
+================================================================================
+VALIDATION STATUS: PASSED ✓
+================================================================================
