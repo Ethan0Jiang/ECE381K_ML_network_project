@@ -2,6 +2,9 @@
 *.pkl
 *.gexf
 *.csv
+*.tar.gz
+*.zip
+*.gz
 
 # (Optional) temporary or derived data
 *.pt
